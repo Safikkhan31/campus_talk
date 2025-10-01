@@ -6,12 +6,12 @@
     <body>
         <form action="../handlers/login_handler.php" method="post">
 
-            <label name="user_id">User Id:</label>
+            <label for="user_id">User Id:</label>
             <input name="user_id">
 
             <br>
 
-            <label name="password">Password:</label>
+            <label for="password">Password:</label>
             <input type="password" name="password">
 
             <br>
@@ -25,6 +25,10 @@
             <br>
 
             <input type="submit">
+
+            <br>
+
+            <a href="resistor.php">resistor</a>
 
         </form>
     </body>
