@@ -1,12 +1,12 @@
 <html>
     <head>
         <title>home</title>
-        <link rel='stylesheet' href='../assets/css/home.css'>
+        <link rel='stylesheet' href='../assets/css/icon.css'>
     </head>
 
     <header>
         <nav>
-            <a href="chat.php">
+            <a href="chat_list.php">
                 <img class="chat_icon" src="../assets/images/icons/chat_icon.png">
             </a>
             <a href="profile.php">
@@ -32,7 +32,6 @@
             foreach($rows as $row){
                 if($row['user_id'] != $_SESSION['user_id']){
                     $profile_image = !empty($row['profile_image_location']) ? $row['profile_image_location'] : '../assets/images/icons/profile_icon.png';
-
                     echo("
                         <div>
                             <img class='profile_icon' src='{$profile_image}'>
@@ -47,7 +46,7 @@
                             <br>
                             CGPA: {$row['cgpa']}
                             <br>
-                            <button>Start Chat</button>
+                            <a href='chat.php?other_id=".urlencode($row['user_id'])."'><button>Start Chat</button></a>
                         </div>
                     ");
                 }

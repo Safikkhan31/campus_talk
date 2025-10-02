@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>profile</title>
-        <link rel="stylesheet" href="../assets/css/home.css">
+        <link rel="stylesheet" href="../assets/css/icon.css">
     </head>
 
     <body>
