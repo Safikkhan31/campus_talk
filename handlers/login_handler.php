@@ -22,7 +22,7 @@ else{
         if($_POST['user_id'] === $raw['user_id']){
             if($_POST['password'] === $raw['user_password']){
                 $_SESSION['user_id'] = $_POST['user_id'];
-                setcookie('user_id', $_POST['user_id'], time() + 1000*60*60*24*20);
+                setcookie('user_id', $_POST['user_id'], time() + 60*60*24*20, "/");
                 header("Location: ../pages/home.php");
                 exit;
             }
