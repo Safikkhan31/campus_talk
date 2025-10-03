@@ -1,10 +1,13 @@
 <html>
     <head>
         <title>chat list</title>
-        <link rel="stylesheet" href="../assets/css/icon.css">
+        <link rel="stylesheet" href="../assets/css/chat_list.css">
     </head>
 
     <body>
+        <a href="home.php">
+            <img class="profile_icon" src="../assets/images/icons/home_icon.png">
+        </a>
 
         <?php
 

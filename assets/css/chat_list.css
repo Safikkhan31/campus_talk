@@ -1,0 +1,68 @@
+/* Reset defaults */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Body background */
+body {
+    background: #F5F5F0; /* light background */
+    padding: 20px;
+}
+
+/* Home icon at the top */
+body > a {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.profile_icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* make circular */
+    object-fit: cover;
+    border: 2px solid #5D866C; /* deep green border */
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.profile_icon:hover {
+    transform: scale(1.1);
+}
+
+/* Chat list container */
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* space between chat items */
+}
+
+/* Individual chat item */
+body > div {
+    display: flex;
+    align-items: center;
+    background: #E6D8C3; /* cream background for cards */
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+body > div:hover {
+    transform: translateY(-2px);
+    background: #C2A68C; /* slight hover color change */
+}
+
+/* Chat item text */
+body > div img.profile_icon {
+    margin-right: 15px; /* space between image and name */
+}
+
+body > div span,
+body > div {
+    font-size: 16px;
+    color: #5D866C; /* deep green text */
+}

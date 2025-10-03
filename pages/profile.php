@@ -1,10 +1,14 @@
 <html>
     <head>
         <title>profile</title>
-        <link rel="stylesheet" href="../assets/css/icon.css">
+        <link rel="stylesheet" href="../assets/css/profile.css">
     </head>
 
     <body>
+
+        <a href="home.php">
+            <img class="profile_icon" src="../assets/images/icons/home_icon.png">
+        </a>
 
         <?php 
             session_start();
@@ -21,7 +25,7 @@
 
         ?>
 
-        <img class="profile_icon" src=<?php 
+        <img class="profile_image" src=<?php 
             if($row && $row['profile_image_location']) echo $row['profile_image_location'];
             else echo "../assets/images/icons/profile_icon.png";
         ?> alt="profile_image">
@@ -34,30 +38,13 @@
         ?>)'>edit</button>
         <br>
 
-        Name: <?php 
-                if($row) echo $row['user_name'];
-                else echo "user name"; ?>
-        <br>
-
-        Branch: <?php 
-                if($row) echo $row['branch'];
-                else echo "user branch"; ?>
-        <br>
-
-        Department: <?php 
-                if($row) echo $row['department'];
-                else echo "user department"; ?>
-        <br>
- 
-        Year: <?php 
-                if($row) echo $row['year'];
-                else echo "user year"; ?>
-        <br>
-
-        CGPA: <?php 
-                if($row) echo $row['cgpa'];
-                else echo "user cgpa"; ?>
-        <br>
+        <div class="profile_info">
+            Name: <?php echo $row ? $row['user_name'] : "user name"; ?><br>
+            Branch: <?php echo $row ? $row['branch'] : "user branch"; ?><br>
+            Department: <?php echo $row ? $row['department'] : "user department"; ?><br>
+            Year: <?php echo $row ? $row['year'] : "user year"; ?><br>
+            CGPA: <?php echo $row ? $row['cgpa'] : "user cgpa"; ?><br>
+        </div>
 
         <a href="../handlers/logout_handler.php">
             <button>Logout</button>

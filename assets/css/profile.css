@@ -1,0 +1,78 @@
+/* Reset and basic */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #F5F5F0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Home icon */
+a img.profile_icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+/* Profile image */
+img.profile_image {
+    width: 150px;      /* resize here */
+    height: 150px;     /* resize here */
+    border-radius: 50%; /* make circular */
+    border: 4px solid #5D866C;
+    margin-bottom: 15px;
+    object-fit: cover;  /* ensures image covers the circle without stretching */
+}
+
+/* Buttons */
+button {
+    background-color: #5D866C;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #4a6b55;
+}
+
+/* Profile info text */
+body > br, body > div, body > img, body > button, body > a {
+    display: block;
+    text-align: center;
+}
+
+body > div, body > img, body > button {
+    margin: 5px 0;
+}
+
+body > br {
+    height: 10px;
+}
+
+/* Info labels */
+body {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Profile update iframe container */
+#profile_update_iframe {
+    margin-top: 20px;
+    width: 90%;
+    max-width: 500px;
+}

@@ -1,10 +1,14 @@
 <html>
     <head>
         <title>chat</title>
-        <link rel="stylesheet" href="../assets/css/icon.css">
+        <link rel="stylesheet" href="../assets/css/chat.css">
     </head>
 
     <body>
+
+        <a href="home.php">
+            <img class="home_icon" src="../assets/images/icons/home_icon.png">
+        </a>
 
         <?php
 
@@ -21,27 +25,34 @@
 
             $profile_image = !empty($row['profile_image_location']) ? $row['profile_image_location'] : '../assets/images/icons/profile_icon.png';
 
-            echo "
-                <div>
-                    <img class='profile_icon' src='{$profile_image}'>
-                    {$row['user_name']}
-                </div>
-            ";
+            // echo "
+            //     <div>
+            //         <img class='profile_icon' src='{$profile_image}'>
+            //         {$row['user_name']}
+            //     </div>
+            // ";
 
             
 
         ?>
 
+        <header>
+            <img class="profile_icon" src="<?php echo $profile_image ?>">
+            <span><?php echo $row['user_name'] ?></span>
+        </header>
+
         <div id="chat_box">
 
         </div>
 
-        <input id="message_input">
-        <button onClick="send_message();">Send</button>
+        <div class="input_container">
+            <input id="message_input">
+            <button onClick="send_message();">Send</button>
+        </div>
 
         <script>
             window.other_id = <?php echo '"'.$_GET['other_id'].'"'; ?>;
         </script>
-        <script src="../assets/javascript/chat.js"></script>
+        <script src="../assets/javascript/chat.js?v=1.1"></script>
     </body>
 </html>

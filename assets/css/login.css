@@ -1,0 +1,85 @@
+/* Reset and full screen */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #F5F5F0; /* light background */
+}
+
+/* Center the form */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Login box styling */
+.login_box {
+    background: #E6D8C3; /* cream */
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    width: 320px;
+    box-sizing: border-box;
+}
+
+/* Labels */
+.login_box label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #5D866C; /* deep green */
+}
+
+/* Inputs */
+.login_box input[type="text"],
+.login_box input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #C2A68C; /* warm brown */
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 14px;
+    background: #fff;
+    color: #333;
+}
+
+/* Submit button */
+.login_box .submit {
+    width: 100%;
+    padding: 12px;
+    background: #5D866C; /* deep green */
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.login_box .submit:hover {
+    background: #4e7058; /* darker green on hover */
+}
+
+/* Error message */
+.login_box .error {
+    color: #C25D5D; /* subtle red/brown for errors */
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+/* Resistor link */
+.login_box .resistor {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #5D866C;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.login_box .resistor:hover {
+    text-decoration: underline;
+}

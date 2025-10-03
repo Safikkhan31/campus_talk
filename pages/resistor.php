@@ -1,11 +1,12 @@
 <html>
     <head>
         <title>resitoration</title>
+        <link rel="stylesheet" href="../assets/css/resistor.css">
     </head>
 
     <boduy>
 
-        <form action="../handlers/resistor_handler.php" method="post">
+        <form class="resistor_box" action="../handlers/resistor_handler.php" method="post">
 
             <label for="user_id">User ID:</label>
             <input name="user_id" required>
@@ -17,7 +18,7 @@
 
             <br>
 
-            <lavel for="password1">Reenter Password:</label>
+            <label for="password1">Reenter Password:</label>
             <input name="password1" required>
 
             <br>
@@ -47,13 +48,15 @@
 
             <?php
                 if(isset($_GET['error'])){
-                    echo "*", $_GET['error'];
+                    echo '<div class="error">*' . htmlspecialchars($_GET['error']) . '</div>';
                 }
             ?>
 
             <br>
 
             <input type="submit">
+
+            <a class="login" href="login.php">login</a>
 
         </form>
 
