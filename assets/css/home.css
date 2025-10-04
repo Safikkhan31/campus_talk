@@ -9,40 +9,8 @@
 /* Body and page background */
 body {
     background: #F5F5F0;  /* light background */
-    padding: 20px;
 }
 
-/* Header styling */
-header {
-    background: #E6D8C3; /* cream */
-    padding: 15px 30px;
-    display: flex;
-    justify-content: flex-end; /* icons on right */
-    align-items: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    border-radius: 8px;
-    margin-bottom: 30px;
-}
-
-/* Header nav icons */
-header nav a {
-    margin-left: 15px;
-    display: inline-block;
-}
-
-header nav img.profile_icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;  /* circular icons */
-    object-fit: cover;
-    cursor: pointer;
-    border: 2px solid #5D866C; /* subtle border */
-    transition: transform 0.2s;
-}
-
-header nav img.profile_icon:hover {
-    transform: scale(1.1);
-}
 
 /* Container for user cards */
 body > div {
@@ -50,6 +18,7 @@ body > div {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px; /* spacing between cards */
+    padding-top: 20px;
 }
 
 /* Individual user card */

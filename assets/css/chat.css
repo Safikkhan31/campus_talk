@@ -19,7 +19,6 @@ body {
 /* Header bar like WhatsApp */
 header {
     width: 100%;
-    max-width: 600px;
     background: #5D866C; /* deep green */
     color: #fff;
     display: flex;
@@ -47,7 +46,6 @@ header span {
 #chat_box {
     flex: 1;
     width: 100%;
-    max-width: 600px;
     background: #E6D8C3; /* cream background */
     padding: 15px;
     overflow-y: auto;
@@ -86,7 +84,6 @@ header span {
 /* Input container fixed at bottom */
 .input_container {
     width: 100%;
-    max-width: 600px;
     display: flex;
     gap: 10px;
     padding: 10px 0;

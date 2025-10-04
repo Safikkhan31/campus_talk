@@ -1,15 +1,10 @@
 <html>
     <head>
         <title>chat</title>
-        <link rel="stylesheet" href="../assets/css/chat.css">
+        <link rel="stylesheet" href="../assets/css/chat.css?v=1.1">
     </head>
 
     <body>
-
-        <a href="home.php">
-            <img class="home_icon" src="../assets/images/icons/home_icon.png">
-        </a>
-
         <?php
 
             session_start();

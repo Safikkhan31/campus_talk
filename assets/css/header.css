@@ -1,0 +1,54 @@
+/* Header Container */
+nav.header {
+    width: 100%;
+    height: 60px;
+    background-color: #075E54; /* WhatsApp-like green */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Logo */
+nav.header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+/* Right side icons container */
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Icons (Chat + Profile) */
+nav.header .icon,
+nav.header .profile_icon {
+    width: 38px;
+    height: 38px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Profile image should be circular */
+nav.header .profile_icon {
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+/* Hover effect */
+nav.header img:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}

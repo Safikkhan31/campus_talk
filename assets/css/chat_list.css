@@ -1,68 +1,75 @@
-/* Reset defaults */
-* {
-    box-sizing: border-box;
+/* chat_list.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Body background */
-body {
-    background: #F5F5F0; /* light background */
-    padding: 20px;
-}
 
-/* Home icon at the top */
-body > a {
-    display: inline-block;
-    margin-bottom: 20px;
-}
-
-.profile_icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%; /* make circular */
-    object-fit: cover;
-    border: 2px solid #5D866C; /* deep green border */
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.profile_icon:hover {
-    transform: scale(1.1);
-}
-
-/* Chat list container */
-body {
+/* ===== Chat Container ===== */
+.chat_container {
     display: flex;
-    flex-direction: column;
-    gap: 15px; /* space between chat items */
+    height: calc(100vh - 60px); /* full height minus header */
+    width: 100%;
 }
 
-/* Individual chat item */
-body > div {
+/* ===== Chat List ===== */
+.chat_list {
+    width: 500px;
+    background-color: #E6D8C3; /* light color for chat list */
+    overflow-y: auto;
+    border-right: 2px solid #C2A68C;
+}
+
+.chat_user {
     display: flex;
     align-items: center;
-    background: #E6D8C3; /* cream background for cards */
-    padding: 10px 15px;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    padding: 12px 15px;
     cursor: pointer;
-    transition: transform 0.2s, background 0.2s;
+    transition: background-color 0.2s;
 }
 
-body > div:hover {
-    transform: translateY(-2px);
-    background: #C2A68C; /* slight hover color change */
+.chat_user:hover {
+    background-color: #F5F5F0;
 }
 
-/* Chat item text */
-body > div img.profile_icon {
-    margin-right: 15px; /* space between image and name */
+.chat_user .profile_icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 12px;
+    border: 2px solid #5D866C;
 }
 
-body > div span,
-body > div {
+.chat_user span {
     font-size: 16px;
-    color: #5D866C; /* deep green text */
+    font-weight: 500;
+    color: #5D866C;
+}
+
+/* ===== Chat iframe ===== */
+.chat_frame {
+    flex: 1;
+    background-color: #F5F5F0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 20px;
+}
+
+.chat_frame iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.chat_bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
 }

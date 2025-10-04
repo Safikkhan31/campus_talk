@@ -1,60 +1,55 @@
-let iframe = document.getElementById("profile_update_iframe");
+function showModal(contentHTML) {
+    const overlay = document.getElementById("modal_overlay");
+    const box = document.getElementById("modal_box");
 
-function start_iframe(name="", branch="", department="", year=0, cgpa=0){
-    let iframe_html = `
-        <iframe srcdoc='
-            <html>
-                <body>
-                    <form action="../handlers/profile_update.php" target="_parent" method="POST">
-                        <label for="user_name">Name:</label>
-                        <input name="user_name" value="${name}">
-
-                        <br>
-
-                        <label for="branch">Branch:</label>
-                        <input name="branch" value="${branch}">
-
-                        <br>
-
-                        <label for="department">Department:</label>
-                        <input name="department" value="${department}">
-
-                        <br>
-
-                        <label for="year">Year:</label>
-                        <input name="year" value="${year}"><br>
-
-                        <label for="cgpa">CGPA:</label>
-                        <input name="cgpa" value="${cgpa}">
-
-                        <input type="submit">
-                    </form>
-                </body>
-            </html>
-        '>
-        </iframe>
+    box.innerHTML = `
+        ${contentHTML}
     `;
 
-    iframe.innerHTML = iframe_html;
+    overlay.style.display = "flex";
+
+    // close modal
+    document.getElementById("close_modal").onclick = () => {
+        overlay.style.display = "none";
+    };
 }
 
-function start_iframe_icon(){
-    let iframe_html = `
-        <iframe srcdoc='
-            <html>
-                <body>
-                    <form action="../handlers/profile_icon_update.php" target="_parent" method="POST" enctype="multipart/form-data">
-                        
-                        <label for="profile_icon">pofile_image:</label>
-                        <input type="file" name="profile_icon">
+function start_iframe(name = "", branch = "", department = "", year = 0, cgpa = 0) {
+    const formHTML = `
+        <form action="../handlers/profile_update.php" target="_parent" method="POST">
+            <button id="close_modal">&times;</button>
+            <label for="user_name">Name:</label>
+            <input name="user_name" value="${name}" required>
 
-                        <input type="submit">
-                    </form>
-                </body>
-            </html>
-        '>
-        </iframe>
+            <label for="branch">Branch:</label>
+            <input name="branch" value="${branch}" required>
+
+            <label for="department">Department:</label>
+            <input name="department" value="${department}" required>
+
+            <label for="year">Year:</label>
+            <input name="year" type="number" value="${year}" required>
+
+            <label for="cgpa">CGPA:</label>
+            <input name="cgpa" type="number" step="0.01" value="${cgpa}" required>
+
+            <input type="submit" value="Update Profile">
+        </form>
     `;
 
-    iframe.innerHTML = iframe_html;
+    showModal(formHTML);
+}
+
+function start_iframe_icon() {
+    const formHTML = `
+        <form action="../handlers/profile_icon_update.php" target="_parent" method="POST" enctype="multipart/form-data">
+            <button id="close_modal">&times;</button>
+            <label for="profile_icon">Profile Image:</label>
+            <input type="file" name="profile_icon" accept="image/*" required>
+
+            <input type="submit" value="Upload Image">
+        </form>
+    `;
+
+    showModal(formHTML);
 }

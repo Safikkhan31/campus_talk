@@ -1,19 +1,17 @@
 <html>
     <head>
         <title>profile</title>
-        <link rel="stylesheet" href="../assets/css/profile.css">
+        <link rel="stylesheet" href="../assets/css/profile.css?v=1.1">
     </head>
+
 
     <body>
 
-        <a href="home.php">
-            <img class="profile_icon" src="../assets/images/icons/home_icon.png">
-        </a>
+        <header>
+            <?php include "../includes/header.php"; ?>
+        </header>
 
-        <?php 
-            session_start();
-
-            include "../database/database_connect.php";
+        <?php
 
             $sql = "select user_id, user_name, branch, department, year, cgpa, profile_image_location from user_info where user_id = :user_id";
             $stmt = $conn->prepare($sql);
@@ -52,11 +50,12 @@
         
 
 
-        <div id="profile_update_iframe">
-
+        <div id="modal_overlay">
+            <div id="modal_box"></div>
         </div>
 
-        <script src="../assets/javascript/profile_update.js"></script>
+
+        <script src="../assets/javascript/profile_update.js?v=1.1"></script>
 
     </body>
 </html>

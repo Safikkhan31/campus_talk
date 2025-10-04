@@ -1,32 +1,11 @@
 <html>
     <head>
         <title>home</title>
-        <link rel='stylesheet' href='../assets/css/home.css'>
+        <link rel='stylesheet' href='../assets/css/home.css?v=1.2'>
     </head>
 
     <header>
-        <?php
-            session_start();
-
-            include "../database/database_connect.php";
-
-            $sql = "select user_id, profile_image_location from user_info where user_id = :user_id";
-            $stmt = $conn->prepare($sql);
-            $stmt->bindParam(":user_id",$_SESSION['user_id']);
-            $stmt->execute();
-
-            $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-            $profile_image = !empty($row['profile_image_location']) ? $row['profile_image_location'] : '../assets/images/icons/profile_icon.png';
-        ?>
-        <nav>
-            <a href="chat_list.php">
-                <img class="profile_icon" src="../assets/images/icons/chat_icon.png">
-            </a>
-            <a href="profile.php">
-                <img class="profile_icon" src="<?php echo $profile_image?>">
-            </a>
-        </nav>
+        <?php include "../includes/header.php"; ?>
     </header>
     
     <body>
@@ -57,7 +36,7 @@
                                 <br>
                                 CGPA: {$row['cgpa']}
                                 <br>
-                                <a href='chat.php?other_id=".urlencode($row['user_id'])."'><button>Start Chat</button></a>
+                                <a href='chat_list.php?other_id=".urlencode($row['user_id'])."'><button>Start Chat</button></a>
                             </div>
                         ");
                     }
