@@ -6,7 +6,7 @@
 
     <boduy>
 
-        <form class="resistor_box" action="../handlers/resistor_handler.php" method="post">
+        <form class="resistor_box" action="otp.php?v=1.1" method="post">
 
             <label for="user_id">User ID:</label>
             <input name="user_id" required>

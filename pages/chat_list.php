@@ -1,7 +1,7 @@
 <html>
 <head>
     <title>chat list</title>
-    <link rel="stylesheet" href="../assets/css/chat_list.css?v=1.2">
+    <link rel="stylesheet" href="../assets/css/chat_list.css?v=1.3">
 </head>
 
 <header>
@@ -10,7 +10,7 @@
 
 <body>
     <div class="chat_container">
-        <div class="chat_list">
+        <div class="chat_list" id="chat_list">
             <?php
                 $sql = "select other_id, user_name, profile_image_location 
                         from chat_list 
@@ -43,7 +43,7 @@
         </div>
     </div>
 
-    <script src="../assets/javascript/chat_list.js"></script>
+    <script src="../assets/javascript/chat_list.js?v=1.1"></script>
     <script>
         start_iframe(<?php
             $link = "chat.php?other_id=".urlencode($_GET['other_id']);

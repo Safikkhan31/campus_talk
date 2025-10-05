@@ -15,13 +15,6 @@ body {
     width: 100%;
 }
 
-/* ===== Chat List ===== */
-.chat_list {
-    width: 500px;
-    background-color: #E6D8C3; /* light color for chat list */
-    overflow-y: auto;
-    border-right: 2px solid #C2A68C;
-}
 
 .chat_user {
     display: flex;
@@ -50,16 +43,6 @@ body {
     color: #5D866C;
 }
 
-/* ===== Chat iframe ===== */
-.chat_frame {
-    flex: 1;
-    background-color: #F5F5F0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    margin: 20px;
-}
 
 .chat_frame iframe {
     width: 100%;
@@ -72,4 +55,38 @@ body {
     height: 100%;
     object-fit: cover;
     border-radius: 5px;
+}
+
+
+.chat_list {
+    width: 500px;
+    background-color: #E6D8C3; /* light color for chat list */
+    overflow-y: auto;
+    border-right: 2px solid #C2A68C;
+}
+
+
+.chat_frame {
+    flex: 1;
+    background-color: #F5F5F0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 20px;
+}
+
+@media (max-width: 999px){
+    .chat_list {
+        width: 100%;
+    }
+
+    .srink {
+        width: 0%;
+    }
+
+    .chat_frame{
+        margin: 0px;
+        
+    }
 }

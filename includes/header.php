@@ -12,14 +12,14 @@
 
     $profile_image = !empty($row['profile_image_location']) ? $row['profile_image_location'] : '../assets/images/icons/profile_icon.png';
 ?>
-<link rel="stylesheet" href="../assets/css/header.css">
+<link rel="stylesheet" href="../assets/css/header.css?v=1.1">
 <nav class="header">
     <a href="home.php" class="logo">
         Campus Talk
     </a>
     <div class="nav-icons">
         <a href="chat_list.php">
-            <img class="icon" src="../assets/images/icons/chat_icon.png" alt="chat">
+            <img class="icon" src="../assets/images/icons/chat_icon.png?v=1.1" alt="chat">
         </a>
         <a href="profile.php?v=1.1">
             <img class="profile_icon" src="<?php echo $profile_image?>" alt="Profile">

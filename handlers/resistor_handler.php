@@ -2,19 +2,13 @@
 
 session_start();
 
-if($_POST['password'] != $_POST['password1']){
-    $error = "passwords does not match";
+if($_POST['otp_set'] != $_POST['otp']){
+    $error = "OTP does not match";
     header("Location: ../pages/resistor.php?error=$error");
     exit;
 }
 
-$reg = "/^[a-zA-Z0-9]*@sot.pdpu.ac.in$/";
-
-if(!preg_match($reg, $_POST['user_id'])){
-    $error = "the user id should be of form rollno@sot.pdpu.ac.in";
-    header("Location: ../pages/resistor.php?error=$error");
-    exit;
-}
+$hashed_password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
 include "../database/database_connect.php";
 
@@ -24,7 +18,7 @@ try{
 
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(":user_id", $_POST['user_id']);
-    $stmt->bindParam(":user_password", $_POST['password']);
+    $stmt->bindParam(":user_password", $hashed_password);
     $stmt->bindParam(":user_name", $_POST['user_name']);
     $stmt->bindParam(":branch", $_POST['branch']);
     $stmt->bindParam(":department", $_POST['department']);

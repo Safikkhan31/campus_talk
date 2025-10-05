@@ -42,7 +42,8 @@ nav.header .profile_icon {
 }
 
 /* Profile image should be circular */
-nav.header .profile_icon {
+nav.header .profile_icon,
+nav.header .icon {
     border-radius: 50%;
     border: 2px solid white;
 }

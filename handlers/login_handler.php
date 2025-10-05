@@ -4,6 +4,7 @@ session_start();
 
 include "../database/database_connect.php";
 
+
 $sql = "select user_id, user_password from login_info where user_id = :user_id";
 
 $stmt = $conn->prepare($sql);
@@ -20,7 +21,7 @@ if(empty($raws)){
 else{
     foreach($raws as $raw){
         if($_POST['user_id'] === $raw['user_id']){
-            if($_POST['password'] === $raw['user_password']){
+            if(password_verify($_POST['password'], $raw['user_password'])){
                 $_SESSION['user_id'] = $_POST['user_id'];
                 setcookie('user_id', $_POST['user_id'], time() + 60*60*24*20, "/");
                 header("Location: ../pages/home.php");

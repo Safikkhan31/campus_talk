@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>home</title>
-        <link rel='stylesheet' href='../assets/css/home.css?v=1.2'>
+        <link rel='stylesheet' href='../assets/css/home.css?v=1.3'>
     </head>
 
     <header>
@@ -10,11 +10,19 @@
     
     <body>
 
+        <form class="search" action="home.php" method="GET">
+            <input type="text" name="search">
+            <input type="submit" value="search">
+        </form>
+
         <div>
             <?php
 
-                $sql = "select user_id, user_name, branch, department, year, cgpa, profile_image_location from user_info";
+                $search = isset($_GET['search']) ? $_GET['search']."%" : "%";
+
+                $sql = "select user_id, user_name, branch, department, year, cgpa, profile_image_location from user_info where user_name like :search";
                 $stmt = $conn->prepare($sql);
+                $stmt->bindParam(":search", $search);
                 $stmt->execute();
 
                 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);

@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>chat</title>
-        <link rel="stylesheet" href="../assets/css/chat.css?v=1.1">
+        <link rel="stylesheet" href="../assets/css/chat.css?v=1.2">
     </head>
 
     <body>

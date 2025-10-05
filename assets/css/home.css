@@ -67,3 +67,35 @@ body > div > div button {
 body > div > div button:hover {
     background: #4e7058;  /* darker green on hover */
 }
+
+
+.search{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.search > input[type="text"]{
+    width: 500px;
+    padding: 10px;
+    border: 1px solid #C2A68C;
+    border-radius: 10px;
+}
+
+
+.search > input[type="submit"] {
+  background-color: #5D866C; /* updated */
+  color: #F5F5F0; /* updated */
+  border: none;
+  padding: 10px 20px;
+  margin-left: 10px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.search > input[type="submit"]:hover {
+  background-color: #C2A68C; /* updated */
+}

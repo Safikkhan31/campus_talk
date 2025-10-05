@@ -5,7 +5,7 @@
     </head>
 
     <body>
-        <form class="login_box" action="../handlers/login_handler.php" method="post">
+        <form class="login_box" action="../handlers/login_handler.php?v=1.1" method="post">
 
             <label for="user_id">User Id:</label><br>
             <input type="text" name="user_id">
