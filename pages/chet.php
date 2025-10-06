@@ -1,7 +1,14 @@
+<?php 
+    if(!isset($_SESSION['user_id'])){
+        header("Location: login.php");
+        exit;
+    }
+?>
+
 <html>
     <head>
         <title>chat</title>
-        <link rel="stylesheet" href="../assets/css/chat.css?v=1.2">
+        <link rel="stylesheet" href="../assets/css/chet.css?v=1.2">
     </head>
 
     <body>
@@ -48,6 +55,6 @@
         <script>
             window.other_id = <?php echo '"'.$_GET['other_id'].'"'; ?>;
         </script>
-        <script src="../assets/javascript/chat.js?v=1.1"></script>
+        <script src="../assets/javascript/chet.js?v=1.1"></script>
     </body>
 </html>

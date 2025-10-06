@@ -45,11 +45,27 @@ function start_iframe_icon() {
         <form action="../handlers/profile_icon_update.php" target="_parent" method="POST" enctype="multipart/form-data">
             <button id="close_modal">&times;</button>
             <label for="profile_icon">Profile Image:</label>
-            <input type="file" name="profile_icon" accept="image/*" required>
+            <input type="file" name="profile_icon" accept="image/*" id="fileInput" required>
+
+            <div id="errorMsg">
+
+            </div>
 
             <input type="submit" value="Upload Image">
         </form>
     `;
 
     showModal(formHTML);
+
+    document.getElementById("fileInput").addEventListener('change', function() {
+        const file = this.files[0];
+        const maxSize = 2 * 1024 * 1024;
+
+        if (file && file.size > maxSize) {
+            document.getElementById('errorMsg').textContent = 'File size must be less than 2 MB!';
+            this.value = ''; // clear the input
+        } else {
+            document.getElementById('errorMsg').textContent = '';
+        }
+    });
 }

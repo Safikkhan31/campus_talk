@@ -3,7 +3,7 @@ let lastMessageId = 0;
 function load_chat(other_id){
     let chat_box = document.getElementById("chat_box");
 
-    fetch(`../handlers/chat_loader.php?other_id=${encodeURIComponent(other_id)}`)
+    fetch(`../handlers/chet_loader.php?other_id=${encodeURIComponent(other_id)}`)
         .then(response => response.json())
         .then(messages => {
             messages.forEach(msg => {

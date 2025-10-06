@@ -1,7 +1,8 @@
 <html>
     <head>
         <title>login</title>
-        <link rel="stylesheet" href="../assets/css/login.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../assets/css/login.css?v=1.2">
     </head>
 
     <body>

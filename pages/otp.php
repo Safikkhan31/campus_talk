@@ -1,6 +1,14 @@
+<?php 
+    if(!isset($_POST['user_id'])){
+        header("Location: login.php");
+        exit;
+    }
+?>
+
 <html>
     <head>
         <title>otp</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../assets/css/otp.css">
     </head>
 
@@ -29,7 +37,7 @@
                 exit;
             }
 
-            require_once __DIR__ . '\..\config\env_loader.php';
+            require_once __DIR__ . '/../config/env_loader.php';
 
             // Load .env if exists
             loadEnv(__DIR__ . '/../.env');

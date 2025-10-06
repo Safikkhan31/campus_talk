@@ -1,7 +1,15 @@
+<?php 
+    if(!isset($_SESSION['user_id'])){
+        header("Location: login.php");
+        exit;
+    }
+?>
+
 <html>
 <head>
     <title>chat list</title>
-    <link rel="stylesheet" href="../assets/css/chat_list.css?v=1.3">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/chet_list.css?v=1.4">
 </head>
 
 <header>
@@ -26,7 +34,7 @@
 
                 foreach($rows as $row){
                     $profile_image = !empty($row['profile_image_location']) ? $row['profile_image_location'] : '../assets/images/icons/profile_icon.png';
-                    $link = "chat.php?other_id=".urlencode($row['other_id']);
+                    $link = "chet.php?other_id=".urlencode($row['other_id']);
                     echo("
                         <div class='chat_user' onclick='start_iframe(".'"'.$link.'"'.");'>
                             <img class='profile_icon' src='{$profile_image}' alt='profile image'>
@@ -39,16 +47,16 @@
 
         <!-- Chat iframe -->
         <div id="chat_iframe" class="chat_frame">
-            <img src="../assets/images/chat_background.jpg" class="chat_bg">
+            <img src="../assets/images/chet_background.jpg" class="chat_bg">
         </div>
     </div>
 
-    <script src="../assets/javascript/chat_list.js?v=1.1"></script>
+    <script src="../assets/javascript/chet_list.js?v=1.1"></script>
     <script>
-        start_iframe(<?php
-            $link = "chat.php?other_id=".urlencode($_GET['other_id']);
-            echo "'".$link."'";
-        ?>);
+        <?php 
+            if(isset($_GET['other_id'])) echo "start_iframe('chet.php?other_id=".urlencode($_GET['other_id'])."');";
+        ?>
+        
     </script>
 </body>
 </html>

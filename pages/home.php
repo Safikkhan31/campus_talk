@@ -1,7 +1,15 @@
+<?php 
+    if(!isset($_SESSION['user_id'])){
+        header("Location: login.php");
+        exit;
+    }
+?>
+
 <html>
     <head>
         <title>home</title>
-        <link rel='stylesheet' href='../assets/css/home.css?v=1.3'>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='stylesheet' href='../assets/css/home.css?v=1.5'>
     </head>
 
     <header>
@@ -44,7 +52,7 @@
                                 <br>
                                 CGPA: {$row['cgpa']}
                                 <br>
-                                <a href='chat_list.php?other_id=".urlencode($row['user_id'])."'><button>Start Chat</button></a>
+                                <a href='chet_list.php?other_id=".urlencode($row['user_id'])."'><button>Start Chat</button></a>
                             </div>
                         ");
                     }

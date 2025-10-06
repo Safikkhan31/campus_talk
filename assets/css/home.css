@@ -8,7 +8,9 @@
 
 /* Body and page background */
 body {
+    margin-top: 60px;
     background: #F5F5F0;  /* light background */
+    border-top: 1px solid transparent;
 }
 
 
@@ -73,11 +75,12 @@ body > div > div button:hover {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin: 20px;
+    margin: 20px auto;
 }
 
 .search > input[type="text"]{
-    width: 500px;
+    width: 65%;
+    max-width: 500px;
     padding: 10px;
     border: 1px solid #C2A68C;
     border-radius: 10px;

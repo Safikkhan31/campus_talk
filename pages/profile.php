@@ -1,7 +1,15 @@
+<?php 
+    if(!isset($_SESSION['user_id'])){
+        header("Location: login.php");
+        exit;
+    }
+?>
+
 <html>
     <head>
         <title>profile</title>
-        <link rel="stylesheet" href="../assets/css/profile.css?v=1.1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../assets/css/profile.css?v=1.2">
     </head>
 
 
@@ -55,7 +63,7 @@
         </div>
 
 
-        <script src="../assets/javascript/profile_update.js?v=1.1"></script>
+        <script src="../assets/javascript/profile_update.js?v=1.2"></script>
 
     </body>
 </html>
