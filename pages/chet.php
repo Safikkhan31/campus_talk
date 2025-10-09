@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     if(!isset($_SESSION['user_id'])){
         header("Location: login.php");
         exit;
@@ -13,9 +14,6 @@
 
     <body>
         <?php
-
-            session_start();
-
             include "../database/database_connect.php";
 
             $sql = "select user_id, user_name, branch, department, year, cgpa, profile_image_location from user_info where user_id = :other_id";

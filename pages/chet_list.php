@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     if(!isset($_SESSION['user_id'])){
         header("Location: login.php");
         exit;
@@ -47,11 +48,11 @@
 
         <!-- Chat iframe -->
         <div id="chat_iframe" class="chat_frame">
-            <img src="../assets/images/chet_background.jpg" class="chat_bg">
+            <img src="../assets/images/chet_alt.jpg" class="chat_bg">
         </div>
     </div>
 
-    <script src="../assets/javascript/chet_list.js?v=1.1"></script>
+    <script src="../assets/javascript/chet_list_js.js?v=1.1"></script>
     <script>
         <?php 
             if(isset($_GET['other_id'])) echo "start_iframe('chet.php?other_id=".urlencode($_GET['other_id'])."');";
