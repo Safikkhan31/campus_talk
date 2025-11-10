@@ -22,7 +22,6 @@
             use PHPMailer\PHPMailer\PHPMailer;
             use PHPMailer\PHPMailer\Exception;
 
-            session_start();
 
             if($_POST['password'] != $_POST['password1']){
                 $error = "passwords does not match";

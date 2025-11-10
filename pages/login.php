@@ -30,7 +30,7 @@
 
             <br>
 
-            <a class="resistor" href="resistor.php">resistor</a>
+            <a class="resistor" href="resistor.php">register</a>
 
         </form>
     </body>
